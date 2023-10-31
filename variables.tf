@@ -5,5 +5,6 @@ variable "gcp_service_list" {
 }
 
 variable "project_id" {
-  type = string
+  type    = string
+  default = "mytesting-400910"
 }
