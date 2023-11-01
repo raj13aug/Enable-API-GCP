@@ -1,5 +1,5 @@
 gcp_service_list = [
-  "compute.googleapis.com",
+  "pubsub.googleapis.com",
 ]
 
 project_id = "mytesting-400910"
