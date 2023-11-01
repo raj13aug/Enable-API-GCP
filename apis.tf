@@ -17,6 +17,7 @@ resource "google_project_service" "cloudresourcemanager_api" {
 
 
 resource "google_project_service" "enabled_apis" {
+  depends_on                 = [google_project_service.cloudresourcemanager_api]
   project                    = var.project_id
   for_each                   = toset(local.all_project_services)
   service                    = each.key
