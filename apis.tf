@@ -22,5 +22,5 @@ resource "google_project_service" "enabled_apis" {
   for_each                   = toset(local.all_project_services)
   service                    = each.key
   disable_dependent_services = true
-  disable_on_destroy         = false
+  disable_on_destroy         = true
 }
