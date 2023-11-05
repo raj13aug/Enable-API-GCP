@@ -4,18 +4,6 @@ locals {
   ])
 }
 
-resource "google_project_service" "cloud_serviceusage_api" {
-  service                    = "serviceusage.googleapis.com"
-  disable_dependent_services = true
-}
-
-resource "google_project_service" "cloudresourcemanager_api" {
-  depends_on                 = [google_project_service.cloud_serviceusage_api]
-  service                    = "cloudresourcemanager.googleapis.com"
-  disable_dependent_services = true
-}
-
-
 resource "google_project_service" "enabled_apis" {
   depends_on                 = [google_project_service.cloudresourcemanager_api]
   project                    = var.project_id
